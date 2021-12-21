@@ -1,11 +1,11 @@
-# Yamu - Yandex.Music UWP client (unoffical, sketch only / draft)
+# Yamu - Yandex.Music UWP client (sketch only / draft)
 
 ## Screenshots
 ![Shot 1](Images/shot1.png)
 
 
 ## Abstract
-Allows you to listen to music through Yandex integration in the simple uwp app
+Allows you to get some music analytics music through Yandex integration in the simple uwp app
 
 Original status: lost (obsolete)
 
@@ -29,7 +29,9 @@ The code may not be perfect. It exists for demonstration and educational purpose
 
 1. Visual Studio 2022
 
-2. .NET Core 3.1
+2. .NET Standard 2.0
+
+3. Win SDK 16299 (hello, Polaris os ;)
 
 
 ## Test scenario
