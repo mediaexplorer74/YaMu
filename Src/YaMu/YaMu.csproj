@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{7287182F-7C89-4945-B86E-8A3D4B0A01A4}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YaMu</RootNamespace>
+    <AssemblyName>YaMu</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <PackageCertificateThumbprint>
+    </PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>YaMu_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <!-- HACK: We technically target 1709. But, in manifest file, target manually set 1703 for Windows Phone support -->
+    <AppxOSMinVersionReplaceManifestVersion>false</AppxOSMinVersionReplaceManifestVersion>
+    <AppxOSMaxVersionTestedReplaceManifestVersion>false</AppxOSMaxVersionTestedReplaceManifestVersion>
+    <SkipMicrosoftUIXamlCheckTargetPlatformVersion>true</SkipMicrosoftUIXamlCheckTargetPlatformVersion>
+    <PackageExtPrefix>appx</PackageExtPrefix>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>arm</AppxBundlePlatforms>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="API\YAlbumAPI.cs" />
+    <Compile Include="API\YArtistAPI.cs" />
+    <Compile Include="API\YCommonAPI.cs" />
+    <Compile Include="API\YLibraryAPI.cs" />
+    <Compile Include="API\YPlaylistAPI.cs" />
+    <Compile Include="API\YRadioAPI.cs" />
+    <Compile Include="API\YSearchAPI.cs" />
+    <Compile Include="API\YTrackAPI.cs" />
+    <Compile Include="API\YUserAPI.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioPlayer.cs" />
+    <Compile Include="Common\AuthStorage.cs" />
+    <Compile Include="Common\DebugSettings.cs" />
+    <Compile Include="Common\Encryptor.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\YAlbumExtensions.cs" />
+    <Compile Include="Extensions\YArtistExtensions.cs" />
+    <Compile Include="Extensions\YPlaylistExtensions.cs" />
+    <Compile Include="Extensions\YStationResultExtensions.cs" />
+    <Compile Include="Extensions\YTrackExtensions.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account\YAccount.cs" />
+    <Compile Include="Models\Account\YAccountResult.cs" />
+    <Compile Include="Models\Account\YAuth.cs" />
+    <Compile Include="Models\Account\YBar.cs" />
+    <Compile Include="Models\Album\YAlbum.cs" />
+    <Compile Include="Models\Artist\YArtist.cs" />
+    <Compile Include="Models\Artist\YArtistBriefInfo.cs" />
+    <Compile Include="Models\Artist\YArtistCounts.cs" />
+    <Compile Include="Models\Artist\YArtistRatings.cs" />
+    <Compile Include="Models\Artist\YConcert.cs" />
+    <Compile Include="Models\Artist\YMetroStation.cs" />
+    <Compile Include="Models\Common\Cover\YCover.cs" />
+    <Compile Include="Models\Common\Cover\YCoverError.cs" />
+    <Compile Include="Models\Common\Cover\YCoverImage.cs" />
+    <Compile Include="Models\Common\Cover\YCoverMosaic.cs" />
+    <Compile Include="Models\Common\Cover\YCoverPic.cs" />
+    <Compile Include="Models\Common\Cover\YCoverType.cs" />
+    <Compile Include="Models\Common\YBaseModel.cs" />
+    <Compile Include="Models\Common\YButton.cs" />
+    <Compile Include="Models\Common\YCountsTracks.cs" />
+    <Compile Include="Models\Common\YDescription.cs" />
+    <Compile Include="Models\Common\YExecutionContext.cs" />
+    <Compile Include="Models\Common\YId.cs" />
+    <Compile Include="Models\Common\YInvocationInfo.cs" />
+    <Compile Include="Models\Common\YLabel.cs" />
+    <Compile Include="Models\Common\YLikedCounts.cs" />
+    <Compile Include="Models\Common\YLink.cs" />
+    <Compile Include="Models\Common\YLinkType.cs" />
+    <Compile Include="Models\Common\YMajor.cs" />
+    <Compile Include="Models\Common\YMasterHub.cs" />
+    <Compile Include="Models\Common\YOwner.cs" />
+    <Compile Include="Models\Common\YPager.cs" />
+    <Compile Include="Models\Common\YPeriod.cs" />
+    <Compile Include="Models\Common\YPermissions.cs" />
+    <Compile Include="Models\Common\YPhone.cs" />
+    <Compile Include="Models\Common\YPlus.cs" />
+    <Compile Include="Models\Common\YPodcastEpisodeType.cs" />
+    <Compile Include="Models\Common\YPrerolls.cs" />
+    <Compile Include="Models\Common\YPrice.cs" />
+    <Compile Include="Models\Common\YProduct.cs" />
+    <Compile Include="Models\Common\YProductType.cs" />
+    <Compile Include="Models\Common\YProfile.cs" />
+    <Compile Include="Models\Common\YReminder.cs" />
+    <Compile Include="Models\Common\YResponse.cs" />
+    <Compile Include="Models\Common\YRevision.cs" />
+    <Compile Include="Models\Common\YSearchType.cs" />
+    <Compile Include="Models\Common\YStorageDownloadFile.cs" />
+    <Compile Include="Models\Common\YSubscription.cs" />
+    <Compile Include="Models\Common\YSubscriptionService.cs" />
+    <Compile Include="Models\Common\YTag.cs" />
+    <Compile Include="Models\Common\YTrackDownloadInfo.cs" />
+    <Compile Include="Models\Common\YTrackSharingFlag.cs" />
+    <Compile Include="Models\Common\YUser.cs" />
+    <Compile Include="Models\Common\YVideo.cs" />
+    <Compile Include="Models\Common\YVinyl.cs" />
+    <Compile Include="Models\Landing\YLanding.cs" />
+    <Compile Include="Models\Landing\YLandingBlock.cs" />
+    <Compile Include="Models\Landing\YLandingBlockData.cs" />
+    <Compile Include="Models\Landing\YLandingBlockEntity.cs" />
+    <Compile Include="Models\Landing\YLandingBlockEntityData.cs" />
+    <Compile Include="Models\Library\YLibrary.cs" />
+    <Compile Include="Models\Library\YLibraryAlbum.cs" />
+    <Compile Include="Models\Library\YLibraryArtist.cs" />
+    <Compile Include="Models\Library\YLibraryPlaylists.cs" />
+    <Compile Include="Models\Library\YLibrarySection.cs" />
+    <Compile Include="Models\Library\YLibrarySectionType.cs" />
+    <Compile Include="Models\Library\YLibraryTrack.cs" />
+    <Compile Include="Models\Library\YLibraryTracks.cs" />
+    <Compile Include="Models\Playlist\YGeneratedPlaylistType.cs" />
+    <Compile Include="Models\Playlist\YPlaylist.cs" />
+    <Compile Include="Models\Playlist\YPlaylistChange.cs" />
+    <Compile Include="Models\Playlist\YPlaylistChangeType.cs" />
+    <Compile Include="Models\Playlist\YPlaylistMadeFor.cs" />
+    <Compile Include="Models\Playlist\YPlaylistPlayCounter.cs" />
+    <Compile Include="Models\Playlist\YPlaylistUidPair.cs" />
+    <Compile Include="Models\Radio\Restriction\YRestriction.cs" />
+    <Compile Include="Models\Radio\Restriction\YRestrictionDiscreteScale.cs" />
+    <Compile Include="Models\Radio\Restriction\YRestrictionEnum.cs" />
+    <Compile Include="Models\Radio\Restriction\YRestrictionType.cs" />
+    <Compile Include="Models\Radio\Restriction\YRestrictionValue.cs" />
+    <Compile Include="Models\Radio\YAdParams.cs" />
+    <Compile Include="Models\Radio\YBrand.cs" />
+    <Compile Include="Models\Radio\YSequenceItem.cs" />
+    <Compile Include="Models\Radio\YStation.cs" />
+    <Compile Include="Models\Radio\YStationData.cs" />
+    <Compile Include="Models\Radio\YStationDescription.cs" />
+    <Compile Include="Models\Radio\YStationIcon.cs" />
+    <Compile Include="Models\Radio\YStationId.cs" />
+    <Compile Include="Models\Radio\YStationRestrictions.cs" />
+    <Compile Include="Models\Radio\YStationRestrictions2.cs" />
+    <Compile Include="Models\Radio\YStationsDashboard.cs" />
+    <Compile Include="Models\Radio\YStationSequence.cs" />
+    <Compile Include="Models\Radio\YStationSettings.cs" />
+    <Compile Include="Models\Radio\YStationSettings2.cs" />
+    <Compile Include="Models\Radio\YTrackParameters.cs" />
+    <Compile Include="Models\Search\Album\YSearchAlbumModel.cs" />
+    <Compile Include="Models\Search\Artist\YSearchArtist.cs" />
+    <Compile Include="Models\Search\Artist\YSearchArtistCounter.cs" />
+    <Compile Include="Models\Search\Artist\YSearchArtistModel.cs" />
+    <Compile Include="Models\Search\Playlist\YSearchPlaylistModel.cs" />
+    <Compile Include="Models\Search\Track\YSearchTrackModel.cs" />
+    <Compile Include="Models\Search\Track\YSearchTrackType.cs" />
+    <Compile Include="Models\Search\User\YSearchUserModel.cs" />
+    <Compile Include="Models\Search\Video\YSearchVideoModel.cs" />
+    <Compile Include="Models\Search\YSearch.cs" />
+    <Compile Include="Models\Search\YSearchBest.cs" />
+    <Compile Include="Models\Search\YSearchResult.cs" />
+    <Compile Include="Models\Search\YSearchSuggest.cs" />
+    <Compile Include="Models\Track\YTrack.cs" />
+    <Compile Include="Models\Track\YTrackAlbumPair.cs" />
+    <Compile Include="Models\Track\YTrackContainer.cs" />
+    <Compile Include="Models\Track\YTrackNormalization.cs" />
+    <Compile Include="Models\Track\YTrackNormalizationR128.cs" />
+    <Compile Include="Models\Track\YTrackPosition.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\Album\YGetAlbumRequest.cs" />
+    <Compile Include="Requests\Artist\YGetArtistRequest.cs" />
+    <Compile Include="Requests\Auth\YAuthorizeRequest.cs" />
+    <Compile Include="Requests\Auth\YGetAuthInfoRequest.cs" />
+    <Compile Include="Requests\HttpContext.cs" />
+    <Compile Include="Requests\Library\YGetLibrarySectionRequest.cs" />
+    <Compile Include="Requests\Library\YLibraryAddRequest.cs" />
+    <Compile Include="Requests\Library\YLibraryRemoveRequest.cs" />
+    <Compile Include="Requests\Playlist\YGetPlaylistFavoritesRequest.cs" />
+    <Compile Include="Requests\Playlist\YGetPlaylistMainPageRequest.cs" />
+    <Compile Include="Requests\Playlist\YGetPlaylistRequest.cs" />
+    <Compile Include="Requests\Playlist\YPlaylistChangeRequest.cs" />
+    <Compile Include="Requests\Playlist\YPlaylistCreateRequest.cs" />
+    <Compile Include="Requests\Playlist\YPlaylistRemoveRequest.cs" />
+    <Compile Include="Requests\Playlist\YPlaylistRenameRequest.cs" />
+    <Compile Include="Requests\Radio\YGetStationRequest.cs" />
+    <Compile Include="Requests\Radio\YGetStationsDashboardRequest.cs" />
+    <Compile Include="Requests\Radio\YGetStationsRequest.cs" />
+    <Compile Include="Requests\Radio\YGetStationTracksRequest.cs" />
+    <Compile Include="Requests\Radio\YSetSettings2Request.cs" />
+    <Compile Include="Requests\Search\YSearchRequest.cs" />
+    <Compile Include="Requests\Search\YSearchSuggestRequest.cs" />
+    <Compile Include="Requests\Track\YGetTrackRequest.cs" />
+    <Compile Include="Requests\Track\YStorageDownloadFileRequest.cs" />
+    <Compile Include="Requests\Track\YTrackDownloadInfoRequest.cs" />
+    <Compile Include="Requests\YEndpoints.cs" />
+    <Compile Include="Requests\YRequest.cs" />
+    <Compile Include="Requests\YRequestHeaders.cs" />
+    <Compile Include="Table.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="YandexMusicApi.cs" />
+    <Compile Include="YandexMusicClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\YaMu01.png" />
+    <Content Include="Assets\YaMu02.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.12</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="YaMu_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NAudio.Universal\NAudio.Universal.csproj">
+      <Project>{b7418f4d-290e-4cba-9dab-83923e54dc61}</Project>
+      <Name>NAudio.Universal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
