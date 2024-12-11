@@ -1,4 +1,4 @@
-# Yamu - Yandex.Music UWP client (sketch only / draft)
+# YaMu - Yandex.Music UWP client (sketch only / draft)
 ![logo](Images/ya-mu.png)
 
 My (lost in 2021) strange YaMu project. This is planned as very lite edition of YandexMusic client (with only 1 function: search&play song "item").
