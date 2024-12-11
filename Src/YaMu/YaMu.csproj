@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{7287182F-7C89-4945-B86E-8A3D4B0A01A4}</ProjectGuid>
+    <ProjectGuid>{FEBDF715-48BB-46F2-ABC6-6FF32131B5B0}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YaMu</RootNamespace>
@@ -18,22 +18,24 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <PackageCertificateThumbprint>
-    </PackageCertificateThumbprint>
-    <PackageCertificateKeyFile>YaMu_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <LangVersion>12</LangVersion>
     <!-- HACK: We technically target 1709. But, in manifest file, target manually set 1703 for Windows Phone support -->
     <AppxOSMinVersionReplaceManifestVersion>false</AppxOSMinVersionReplaceManifestVersion>
     <AppxOSMaxVersionTestedReplaceManifestVersion>false</AppxOSMaxVersionTestedReplaceManifestVersion>
     <SkipMicrosoftUIXamlCheckTargetPlatformVersion>true</SkipMicrosoftUIXamlCheckTargetPlatformVersion>
     <PackageExtPrefix>appx</PackageExtPrefix>
+    <PackageCertificateThumbprint>
+    </PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>YaMu_TemporaryKey.pfx</PackageCertificateKeyFile>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>arm</AppxBundlePlatforms>
+    <GenerateTemporaryStoreCertificate>True</GenerateTemporaryStoreCertificate>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -68,6 +70,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <OutputPath>bin\ARM\Release\</OutputPath>
@@ -115,6 +118,8 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>false</UseDotNetNativeToolchain>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -132,178 +137,178 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="API\YAlbumAPI.cs" />
-    <Compile Include="API\YArtistAPI.cs" />
-    <Compile Include="API\YCommonAPI.cs" />
-    <Compile Include="API\YLibraryAPI.cs" />
-    <Compile Include="API\YPlaylistAPI.cs" />
-    <Compile Include="API\YRadioAPI.cs" />
-    <Compile Include="API\YSearchAPI.cs" />
-    <Compile Include="API\YTrackAPI.cs" />
-    <Compile Include="API\YUserAPI.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AudioPlayer.cs" />
-    <Compile Include="Common\AuthStorage.cs" />
-    <Compile Include="Common\DebugSettings.cs" />
-    <Compile Include="Common\Encryptor.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Extensions\YAlbumExtensions.cs" />
-    <Compile Include="Extensions\YArtistExtensions.cs" />
-    <Compile Include="Extensions\YPlaylistExtensions.cs" />
-    <Compile Include="Extensions\YStationResultExtensions.cs" />
-    <Compile Include="Extensions\YTrackExtensions.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Account\YAccount.cs" />
-    <Compile Include="Models\Account\YAccountResult.cs" />
-    <Compile Include="Models\Account\YAuth.cs" />
-    <Compile Include="Models\Account\YBar.cs" />
-    <Compile Include="Models\Album\YAlbum.cs" />
-    <Compile Include="Models\Artist\YArtist.cs" />
-    <Compile Include="Models\Artist\YArtistBriefInfo.cs" />
-    <Compile Include="Models\Artist\YArtistCounts.cs" />
-    <Compile Include="Models\Artist\YArtistRatings.cs" />
-    <Compile Include="Models\Artist\YConcert.cs" />
-    <Compile Include="Models\Artist\YMetroStation.cs" />
-    <Compile Include="Models\Common\Cover\YCover.cs" />
-    <Compile Include="Models\Common\Cover\YCoverError.cs" />
-    <Compile Include="Models\Common\Cover\YCoverImage.cs" />
-    <Compile Include="Models\Common\Cover\YCoverMosaic.cs" />
-    <Compile Include="Models\Common\Cover\YCoverPic.cs" />
-    <Compile Include="Models\Common\Cover\YCoverType.cs" />
-    <Compile Include="Models\Common\YBaseModel.cs" />
-    <Compile Include="Models\Common\YButton.cs" />
-    <Compile Include="Models\Common\YCountsTracks.cs" />
-    <Compile Include="Models\Common\YDescription.cs" />
-    <Compile Include="Models\Common\YExecutionContext.cs" />
-    <Compile Include="Models\Common\YId.cs" />
-    <Compile Include="Models\Common\YInvocationInfo.cs" />
-    <Compile Include="Models\Common\YLabel.cs" />
-    <Compile Include="Models\Common\YLikedCounts.cs" />
-    <Compile Include="Models\Common\YLink.cs" />
-    <Compile Include="Models\Common\YLinkType.cs" />
-    <Compile Include="Models\Common\YMajor.cs" />
-    <Compile Include="Models\Common\YMasterHub.cs" />
-    <Compile Include="Models\Common\YOwner.cs" />
-    <Compile Include="Models\Common\YPager.cs" />
-    <Compile Include="Models\Common\YPeriod.cs" />
-    <Compile Include="Models\Common\YPermissions.cs" />
-    <Compile Include="Models\Common\YPhone.cs" />
-    <Compile Include="Models\Common\YPlus.cs" />
-    <Compile Include="Models\Common\YPodcastEpisodeType.cs" />
-    <Compile Include="Models\Common\YPrerolls.cs" />
-    <Compile Include="Models\Common\YPrice.cs" />
-    <Compile Include="Models\Common\YProduct.cs" />
-    <Compile Include="Models\Common\YProductType.cs" />
-    <Compile Include="Models\Common\YProfile.cs" />
-    <Compile Include="Models\Common\YReminder.cs" />
-    <Compile Include="Models\Common\YResponse.cs" />
-    <Compile Include="Models\Common\YRevision.cs" />
-    <Compile Include="Models\Common\YSearchType.cs" />
-    <Compile Include="Models\Common\YStorageDownloadFile.cs" />
-    <Compile Include="Models\Common\YSubscription.cs" />
-    <Compile Include="Models\Common\YSubscriptionService.cs" />
-    <Compile Include="Models\Common\YTag.cs" />
-    <Compile Include="Models\Common\YTrackDownloadInfo.cs" />
-    <Compile Include="Models\Common\YTrackSharingFlag.cs" />
-    <Compile Include="Models\Common\YUser.cs" />
-    <Compile Include="Models\Common\YVideo.cs" />
-    <Compile Include="Models\Common\YVinyl.cs" />
-    <Compile Include="Models\Landing\YLanding.cs" />
-    <Compile Include="Models\Landing\YLandingBlock.cs" />
-    <Compile Include="Models\Landing\YLandingBlockData.cs" />
-    <Compile Include="Models\Landing\YLandingBlockEntity.cs" />
-    <Compile Include="Models\Landing\YLandingBlockEntityData.cs" />
-    <Compile Include="Models\Library\YLibrary.cs" />
-    <Compile Include="Models\Library\YLibraryAlbum.cs" />
-    <Compile Include="Models\Library\YLibraryArtist.cs" />
-    <Compile Include="Models\Library\YLibraryPlaylists.cs" />
-    <Compile Include="Models\Library\YLibrarySection.cs" />
-    <Compile Include="Models\Library\YLibrarySectionType.cs" />
-    <Compile Include="Models\Library\YLibraryTrack.cs" />
-    <Compile Include="Models\Library\YLibraryTracks.cs" />
-    <Compile Include="Models\Playlist\YGeneratedPlaylistType.cs" />
-    <Compile Include="Models\Playlist\YPlaylist.cs" />
-    <Compile Include="Models\Playlist\YPlaylistChange.cs" />
-    <Compile Include="Models\Playlist\YPlaylistChangeType.cs" />
-    <Compile Include="Models\Playlist\YPlaylistMadeFor.cs" />
-    <Compile Include="Models\Playlist\YPlaylistPlayCounter.cs" />
-    <Compile Include="Models\Playlist\YPlaylistUidPair.cs" />
-    <Compile Include="Models\Radio\Restriction\YRestriction.cs" />
-    <Compile Include="Models\Radio\Restriction\YRestrictionDiscreteScale.cs" />
-    <Compile Include="Models\Radio\Restriction\YRestrictionEnum.cs" />
-    <Compile Include="Models\Radio\Restriction\YRestrictionType.cs" />
-    <Compile Include="Models\Radio\Restriction\YRestrictionValue.cs" />
-    <Compile Include="Models\Radio\YAdParams.cs" />
-    <Compile Include="Models\Radio\YBrand.cs" />
-    <Compile Include="Models\Radio\YSequenceItem.cs" />
-    <Compile Include="Models\Radio\YStation.cs" />
-    <Compile Include="Models\Radio\YStationData.cs" />
-    <Compile Include="Models\Radio\YStationDescription.cs" />
-    <Compile Include="Models\Radio\YStationIcon.cs" />
-    <Compile Include="Models\Radio\YStationId.cs" />
-    <Compile Include="Models\Radio\YStationRestrictions.cs" />
-    <Compile Include="Models\Radio\YStationRestrictions2.cs" />
-    <Compile Include="Models\Radio\YStationsDashboard.cs" />
-    <Compile Include="Models\Radio\YStationSequence.cs" />
-    <Compile Include="Models\Radio\YStationSettings.cs" />
-    <Compile Include="Models\Radio\YStationSettings2.cs" />
-    <Compile Include="Models\Radio\YTrackParameters.cs" />
-    <Compile Include="Models\Search\Album\YSearchAlbumModel.cs" />
-    <Compile Include="Models\Search\Artist\YSearchArtist.cs" />
-    <Compile Include="Models\Search\Artist\YSearchArtistCounter.cs" />
-    <Compile Include="Models\Search\Artist\YSearchArtistModel.cs" />
-    <Compile Include="Models\Search\Playlist\YSearchPlaylistModel.cs" />
-    <Compile Include="Models\Search\Track\YSearchTrackModel.cs" />
-    <Compile Include="Models\Search\Track\YSearchTrackType.cs" />
-    <Compile Include="Models\Search\User\YSearchUserModel.cs" />
-    <Compile Include="Models\Search\Video\YSearchVideoModel.cs" />
-    <Compile Include="Models\Search\YSearch.cs" />
-    <Compile Include="Models\Search\YSearchBest.cs" />
-    <Compile Include="Models\Search\YSearchResult.cs" />
-    <Compile Include="Models\Search\YSearchSuggest.cs" />
-    <Compile Include="Models\Track\YTrack.cs" />
-    <Compile Include="Models\Track\YTrackAlbumPair.cs" />
-    <Compile Include="Models\Track\YTrackContainer.cs" />
-    <Compile Include="Models\Track\YTrackNormalization.cs" />
-    <Compile Include="Models\Track\YTrackNormalizationR128.cs" />
-    <Compile Include="Models\Track\YTrackPosition.cs" />
+    <Compile Include="Main\AudioPlayer.cs" />
+    <Compile Include="Main\Table.cs" />
+    <Compile Include="Main\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Requests\Album\YGetAlbumRequest.cs" />
-    <Compile Include="Requests\Artist\YGetArtistRequest.cs" />
-    <Compile Include="Requests\Auth\YAuthorizeRequest.cs" />
-    <Compile Include="Requests\Auth\YGetAuthInfoRequest.cs" />
-    <Compile Include="Requests\HttpContext.cs" />
-    <Compile Include="Requests\Library\YGetLibrarySectionRequest.cs" />
-    <Compile Include="Requests\Library\YLibraryAddRequest.cs" />
-    <Compile Include="Requests\Library\YLibraryRemoveRequest.cs" />
-    <Compile Include="Requests\Playlist\YGetPlaylistFavoritesRequest.cs" />
-    <Compile Include="Requests\Playlist\YGetPlaylistMainPageRequest.cs" />
-    <Compile Include="Requests\Playlist\YGetPlaylistRequest.cs" />
-    <Compile Include="Requests\Playlist\YPlaylistChangeRequest.cs" />
-    <Compile Include="Requests\Playlist\YPlaylistCreateRequest.cs" />
-    <Compile Include="Requests\Playlist\YPlaylistRemoveRequest.cs" />
-    <Compile Include="Requests\Playlist\YPlaylistRenameRequest.cs" />
-    <Compile Include="Requests\Radio\YGetStationRequest.cs" />
-    <Compile Include="Requests\Radio\YGetStationsDashboardRequest.cs" />
-    <Compile Include="Requests\Radio\YGetStationsRequest.cs" />
-    <Compile Include="Requests\Radio\YGetStationTracksRequest.cs" />
-    <Compile Include="Requests\Radio\YSetSettings2Request.cs" />
-    <Compile Include="Requests\Search\YSearchRequest.cs" />
-    <Compile Include="Requests\Search\YSearchSuggestRequest.cs" />
-    <Compile Include="Requests\Track\YGetTrackRequest.cs" />
-    <Compile Include="Requests\Track\YStorageDownloadFileRequest.cs" />
-    <Compile Include="Requests\Track\YTrackDownloadInfoRequest.cs" />
-    <Compile Include="Requests\YEndpoints.cs" />
-    <Compile Include="Requests\YRequest.cs" />
-    <Compile Include="Requests\YRequestHeaders.cs" />
-    <Compile Include="Table.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="YandexMusicApi.cs" />
-    <Compile Include="YandexMusicClient.cs" />
+    <Compile Include="YaMusicAPI\api\YAlbumAPI.cs" />
+    <Compile Include="YaMusicAPI\api\YArtistAPI.cs" />
+    <Compile Include="YaMusicAPI\api\YCommonAPI.cs" />
+    <Compile Include="YaMusicAPI\api\YLibraryAPI.cs" />
+    <Compile Include="YaMusicAPI\api\YPlaylistAPI.cs" />
+    <Compile Include="YaMusicAPI\api\YRadioAPI.cs" />
+    <Compile Include="YaMusicAPI\api\YSearchAPI.cs" />
+    <Compile Include="YaMusicAPI\api\YTrackAPI.cs" />
+    <Compile Include="YaMusicAPI\api\YUserAPI.cs" />
+    <Compile Include="YaMusicAPI\common\AuthStorage.cs" />
+    <Compile Include="YaMusicAPI\common\DebugSettings.cs" />
+    <Compile Include="YaMusicAPI\common\Encryptor.cs" />
+    <Compile Include="YaMusicAPI\extensions\StringExtensions.cs" />
+    <Compile Include="YaMusicAPI\extensions\YAlbumExtensions.cs" />
+    <Compile Include="YaMusicAPI\extensions\YArtistExtensions.cs" />
+    <Compile Include="YaMusicAPI\extensions\YPlaylistExtensions.cs" />
+    <Compile Include="YaMusicAPI\extensions\YStationResultExtensions.cs" />
+    <Compile Include="YaMusicAPI\extensions\YTrackExtensions.cs" />
+    <Compile Include="YaMusicAPI\models\Account\YAccount.cs" />
+    <Compile Include="YaMusicAPI\models\Account\YAccountResult.cs" />
+    <Compile Include="YaMusicAPI\models\Account\YAuth.cs" />
+    <Compile Include="YaMusicAPI\models\Account\YBar.cs" />
+    <Compile Include="YaMusicAPI\models\Album\YAlbum.cs" />
+    <Compile Include="YaMusicAPI\models\Artist\YArtist.cs" />
+    <Compile Include="YaMusicAPI\models\Artist\YArtistBriefInfo.cs" />
+    <Compile Include="YaMusicAPI\models\Artist\YArtistCounts.cs" />
+    <Compile Include="YaMusicAPI\models\Artist\YArtistRatings.cs" />
+    <Compile Include="YaMusicAPI\models\Artist\YConcert.cs" />
+    <Compile Include="YaMusicAPI\models\Artist\YMetroStation.cs" />
+    <Compile Include="YaMusicAPI\models\Common\Cover\YCover.cs" />
+    <Compile Include="YaMusicAPI\models\Common\Cover\YCoverError.cs" />
+    <Compile Include="YaMusicAPI\models\Common\Cover\YCoverImage.cs" />
+    <Compile Include="YaMusicAPI\models\Common\Cover\YCoverMosaic.cs" />
+    <Compile Include="YaMusicAPI\models\Common\Cover\YCoverPic.cs" />
+    <Compile Include="YaMusicAPI\models\Common\Cover\YCoverType.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YBaseModel.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YButton.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YCountsTracks.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YDescription.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YExecutionContext.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YId.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YInvocationInfo.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YLabel.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YLikedCounts.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YLink.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YLinkType.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YMajor.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YMasterHub.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YOwner.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YPager.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YPeriod.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YPermissions.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YPhone.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YPlus.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YPodcastEpisodeType.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YPrerolls.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YPrice.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YProduct.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YProductType.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YProfile.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YReminder.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YResponse.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YRevision.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YSearchType.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YStorageDownloadFile.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YSubscription.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YSubscriptionService.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YTag.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YTrackDownloadInfo.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YTrackSharingFlag.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YUser.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YVideo.cs" />
+    <Compile Include="YaMusicAPI\models\Common\YVinyl.cs" />
+    <Compile Include="YaMusicAPI\models\Landing\YLanding.cs" />
+    <Compile Include="YaMusicAPI\models\Landing\YLandingBlock.cs" />
+    <Compile Include="YaMusicAPI\models\Landing\YLandingBlockData.cs" />
+    <Compile Include="YaMusicAPI\models\Landing\YLandingBlockEntity.cs" />
+    <Compile Include="YaMusicAPI\models\Landing\YLandingBlockEntityData.cs" />
+    <Compile Include="YaMusicAPI\models\Library\YLibrary.cs" />
+    <Compile Include="YaMusicAPI\models\Library\YLibraryAlbum.cs" />
+    <Compile Include="YaMusicAPI\models\Library\YLibraryArtist.cs" />
+    <Compile Include="YaMusicAPI\models\Library\YLibraryPlaylists.cs" />
+    <Compile Include="YaMusicAPI\models\Library\YLibrarySection.cs" />
+    <Compile Include="YaMusicAPI\models\Library\YLibrarySectionType.cs" />
+    <Compile Include="YaMusicAPI\models\Library\YLibraryTrack.cs" />
+    <Compile Include="YaMusicAPI\models\Library\YLibraryTracks.cs" />
+    <Compile Include="YaMusicAPI\models\Playlist\YGeneratedPlaylistType.cs" />
+    <Compile Include="YaMusicAPI\models\Playlist\YPlaylist.cs" />
+    <Compile Include="YaMusicAPI\models\Playlist\YPlaylistChange.cs" />
+    <Compile Include="YaMusicAPI\models\Playlist\YPlaylistChangeType.cs" />
+    <Compile Include="YaMusicAPI\models\Playlist\YPlaylistMadeFor.cs" />
+    <Compile Include="YaMusicAPI\models\Playlist\YPlaylistPlayCounter.cs" />
+    <Compile Include="YaMusicAPI\models\Playlist\YPlaylistUidPair.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\Restriction\YRestriction.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\Restriction\YRestrictionDiscreteScale.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\Restriction\YRestrictionEnum.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\Restriction\YRestrictionType.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\Restriction\YRestrictionValue.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YAdParams.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YBrand.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YSequenceItem.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YStation.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YStationData.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YStationDescription.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YStationIcon.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YStationId.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YStationRestrictions.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YStationRestrictions2.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YStationsDashboard.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YStationSequence.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YStationSettings.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YStationSettings2.cs" />
+    <Compile Include="YaMusicAPI\models\Radio\YTrackParameters.cs" />
+    <Compile Include="YaMusicAPI\models\Search\Album\YSearchAlbumModel.cs" />
+    <Compile Include="YaMusicAPI\models\Search\Artist\YSearchArtist.cs" />
+    <Compile Include="YaMusicAPI\models\Search\Artist\YSearchArtistCounter.cs" />
+    <Compile Include="YaMusicAPI\models\Search\Artist\YSearchArtistModel.cs" />
+    <Compile Include="YaMusicAPI\models\Search\Playlist\YSearchPlaylistModel.cs" />
+    <Compile Include="YaMusicAPI\models\Search\Track\YSearchTrackModel.cs" />
+    <Compile Include="YaMusicAPI\models\Search\Track\YSearchTrackType.cs" />
+    <Compile Include="YaMusicAPI\models\Search\User\YSearchUserModel.cs" />
+    <Compile Include="YaMusicAPI\models\Search\Video\YSearchVideoModel.cs" />
+    <Compile Include="YaMusicAPI\models\Search\YSearch.cs" />
+    <Compile Include="YaMusicAPI\models\Search\YSearchBest.cs" />
+    <Compile Include="YaMusicAPI\models\Search\YSearchResult.cs" />
+    <Compile Include="YaMusicAPI\models\Search\YSearchSuggest.cs" />
+    <Compile Include="YaMusicAPI\models\Track\YTrack.cs" />
+    <Compile Include="YaMusicAPI\models\Track\YTrackAlbumPair.cs" />
+    <Compile Include="YaMusicAPI\models\Track\YTrackContainer.cs" />
+    <Compile Include="YaMusicAPI\models\Track\YTrackNormalization.cs" />
+    <Compile Include="YaMusicAPI\models\Track\YTrackNormalizationR128.cs" />
+    <Compile Include="YaMusicAPI\models\Track\YTrackPosition.cs" />
+    <Compile Include="YaMusicAPI\requests\Album\YGetAlbumRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Artist\YGetArtistRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Auth\YAuthorizeRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Auth\YGetAuthInfoRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\HttpContext.cs" />
+    <Compile Include="YaMusicAPI\requests\Library\YGetLibrarySectionRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Library\YLibraryAddRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Library\YLibraryRemoveRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Playlist\YGetPlaylistFavoritesRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Playlist\YGetPlaylistMainPageRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Playlist\YGetPlaylistRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Playlist\YPlaylistChangeRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Playlist\YPlaylistCreateRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Playlist\YPlaylistRemoveRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Playlist\YPlaylistRenameRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Radio\YGetStationRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Radio\YGetStationsDashboardRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Radio\YGetStationsRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Radio\YGetStationTracksRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Radio\YSetSettings2Request.cs" />
+    <Compile Include="YaMusicAPI\requests\Search\YSearchRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Search\YSearchSuggestRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Track\YGetTrackRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Track\YStorageDownloadFileRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\Track\YTrackDownloadInfoRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\YEndpoints.cs" />
+    <Compile Include="YaMusicAPI\requests\YRequest.cs" />
+    <Compile Include="YaMusicAPI\requests\YRequestHeaders.cs" />
+    <Compile Include="YaMusicAPI\YandexMusicApi.cs" />
+    <Compile Include="YaMusicAPI\YandexMusicClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -311,6 +316,56 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\custom-twitter\LargeTile.scale-100.png" />
+    <Content Include="Assets\custom-twitter\LargeTile.scale-125.png" />
+    <Content Include="Assets\custom-twitter\LargeTile.scale-150.png" />
+    <Content Include="Assets\custom-twitter\LargeTile.scale-200.png" />
+    <Content Include="Assets\custom-twitter\LargeTile.scale-400.png" />
+    <Content Include="Assets\custom-twitter\SmallTile.scale-100.png" />
+    <Content Include="Assets\custom-twitter\SmallTile.scale-125.png" />
+    <Content Include="Assets\custom-twitter\SmallTile.scale-150.png" />
+    <Content Include="Assets\custom-twitter\SmallTile.scale-200.png" />
+    <Content Include="Assets\custom-twitter\SmallTile.scale-400.png" />
+    <Content Include="Assets\custom-twitter\SplashScreen.scale-100.png" />
+    <Content Include="Assets\custom-twitter\SplashScreen.scale-125.png" />
+    <Content Include="Assets\custom-twitter\SplashScreen.scale-150.png" />
+    <Content Include="Assets\custom-twitter\SplashScreen.scale-200.png" />
+    <Content Include="Assets\custom-twitter\SplashScreen.scale-400.png" />
+    <Content Include="Assets\custom-twitter\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\custom-twitter\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\custom-twitter\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\custom-twitter\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\custom-twitter\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.altform-unplated_targetsize-24.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\custom-twitter\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\custom-twitter\StoreLogo.scale-100.png" />
+    <Content Include="Assets\custom-twitter\StoreLogo.scale-125.png" />
+    <Content Include="Assets\custom-twitter\StoreLogo.scale-150.png" />
+    <Content Include="Assets\custom-twitter\StoreLogo.scale-200.png" />
+    <Content Include="Assets\custom-twitter\StoreLogo.scale-400.png" />
+    <Content Include="Assets\custom-twitter\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\custom-twitter\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\custom-twitter\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\custom-twitter\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\custom-twitter\Wide310x150Logo.scale-400.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
@@ -356,8 +411,6 @@
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <Content Include="Assets\YaMu01.png" />
-    <Content Include="Assets\YaMu02.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -365,6 +418,52 @@
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm">
+      <Version>8.3.2</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core">
+      <Version>2.14.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging">
+      <Version>9.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug">
+      <Version>9.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.14</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI">
+      <Version>6.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Media">
+      <Version>6.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Animations">
+      <Version>6.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.UI.Xaml">
+      <Version>2.7.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
+      <Version>2.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="CommunityToolkit.Labs.Extensions.DependencyInjection">
+      <Version>0.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsDesktop, Version=10.0.19041.0">
+      <Name>Windows Desktop Extensions for the UWP</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsMobile, Version=10.0.19041.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -377,15 +476,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.12</Version>
-    </PackageReference>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.1</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="YaMu_TemporaryKey.pfx" />
+    <Content Include="Assets\fluentui.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NAudio.Universal\NAudio.Universal.csproj">
@@ -393,6 +484,10 @@
       <Name>NAudio.Universal</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="YaMu_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

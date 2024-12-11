@@ -8,8 +8,12 @@ My (lost in 2021) strange YaMu project. This is planned as very lite edition of 
 At now this thing allows you to get some music analytics music through Yandex integration in the simplest uwp app for Windows 10 / 11.
 
 ## Screensho(s)
-![](Images/shot01.png)
-![](Images/shot02.png)
+![Win11Lite](Images/shot01.png)
+![W10M](Images/shot02.png)
+
+## Solution (app) structure
+- NAudio.Universal (Win SDK 16299 used. Project uncomplete, some dll externs still here)
+- YaMu (Win SDK 16299 used. Project uncomplete, no sound)
 
 ## Status 
 - Experimenting with "special assembly" for Windows 10 Mobile.
@@ -34,10 +38,9 @@ Feel free to fork or improve this project :)
 ## Test scenario
 - Compile
 - Start app
-- Fill your Login and Pass to "full authorize" on Yandex.Music service (or skip this phase , because of 
-non-auth mode is also good too for getting some song info...)
-- Press the button "Auht and Get Data"
-- Test the result that must be 10 popular music tracks of Metallica =)
+- Fill Artist ID (i.e, "3121")
+- Press the button "Go!" Button
+- Test the result that must be 10 popular music tracks of choosed Artist =)
  
 
 ## Project status
@@ -50,8 +53,9 @@ non-auth mode is also good too for getting some song info...)
 
 ## References
 - [Yandex.Music.Api C# Project](https://github.com/Winster332/Yandex.Music.Api)
-- [Just a music player experiment for Windows with NAudio library and UWP Audio API for Windows 10](https://github.com/ddasutein/SampleMusicPlayer)
 - [NAudio](https://github.com/naudio)
+- [Just a music player experiment for Windows with NAudio library and UWP Audio API for Windows 10](https://github.com/ddasutein/SampleMusicPlayer)
+
 
 ## License
 Distributed under the MIT License.
